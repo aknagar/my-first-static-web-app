@@ -28,9 +28,8 @@
       "route": "/logout",
       "redirect": "/.auth/logout"
   },
-    {
-    "route": "/*",
-    "allowedRoles": ["authenticated"]
+  {
+    "route": "/"
   }],
   "responseOverrides": {
     "401": {
