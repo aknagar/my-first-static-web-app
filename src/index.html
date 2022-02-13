@@ -12,6 +12,29 @@
   <main>
     <h1>Vanilla JavaScript App</h1>
   </main>
+  <div id="logins" class="hidden">
+    <h1>Login</h1>
+    <a href="/.auth/login/aad" title="Azure AD">Azure AD</a>
+    <a href="/.auth/login/github" title="GitHub">GitHub</a>
+    <a href="/.auth/login/twitter" title="Twitter">Twitter</a>
+    <a href="/.auth/login/facebook" title="Facebook">Facebook</a>
+    <a href="/.auth/login/google" title="Google">Google</a>
+  </div>
+
+  <div id="loggedIn" class="hidden">
+    <p>Message from the server: <strong class="message"></strong></p>
+    <a href="/.auth/logout">Logout</a>
+  </div>
+
+  <div id="spinner">
+    <div class="lds-facebook">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
