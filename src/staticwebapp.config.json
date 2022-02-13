@@ -3,6 +3,10 @@
     "rewrite": "index.html",
     "exclude": [ "/_framework/*", "/css/*", "/img/*" ]
   },
-    "routes": [    
+    "routes": [   
+      {
+        "route": "/chat.html",
+        "allowedRoles": ["authenticated"]
+      } 
     ]
   }
