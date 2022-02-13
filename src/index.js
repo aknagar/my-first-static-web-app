@@ -6,13 +6,7 @@
 
   const isUserThere = async () => {
     const res = await fetch("/.auth/me");
-    //const { clientPrincipal } = await res.json();
-  try {
-    const { clientPrincipal } =  JSON.parse(res);
-  }
-  catch (error) {
-      console.log('Error parsing JSON:', error, res);
-  }
+    const { clientPrincipal } = await res.json();
     loggedInUser = clientPrincipal.userDetails || "--";
     return clientPrincipal !== null;
   };

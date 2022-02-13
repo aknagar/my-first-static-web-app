@@ -3,7 +3,32 @@
     "rewrite": "index.html",
     "exclude": [ "/_framework/*", "/css/*", "/img/*.{png,jpg,gif}" ]
   },
-  "routes": [{
+  "routes": [
+    {
+      "route": "/.auth/login/github",
+      "statusCode": "401"
+  },
+  {
+      "route": "/.auth/login/twitter",
+      "statusCode": "401"
+  },
+  {
+      "route": "/.auth/login/facebook",
+      "statusCode": "401"
+  },
+  {
+      "route": "/.auth/login/google",
+      "statusCode": "401"
+  },
+  {
+      "route": "/login",
+      "redirect": "/.auth/login/aad"
+  },
+  {
+      "route": "/logout",
+      "redirect": "/.auth/logout"
+  },
+    {
     "route": "/*",
     "allowedRoles": ["authenticated"]
   }],
