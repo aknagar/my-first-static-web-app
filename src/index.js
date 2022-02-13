@@ -2,12 +2,12 @@
   const logins = document.getElementById("logins");
   const spinner = document.getElementById("spinner");
   const loggedIn = document.getElementById("loggedIn");
-  var loggedInUser = "not available";
+  var loggedInUser;
 
   const isUserThere = async () => {
     const res = await fetch("/.auth/me");
     const { clientPrincipal } = await res.json();
-    loggedInUser = clientPrincipal.loggedInUser;
+    loggedInUser = clientPrincipal.userDetails || "--";
     return clientPrincipal !== null;
   };
 

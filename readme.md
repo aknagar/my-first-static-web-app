@@ -7,3 +7,5 @@ This repo is used as a starter for a _very basic_ HTML web application using no 
 
 # Application configuration
 [Configuration](https://docs.microsoft.com/en-us/azure/static-web-apps/configuration)
+
+[Resources](https://github.com/staticwebdev/awesome-azure-static-web-apps)
