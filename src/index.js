@@ -2,17 +2,18 @@
   const logins = document.getElementById("logins");
   const spinner = document.getElementById("spinner");
   const loggedIn = document.getElementById("loggedIn");
+  var loggedInUser = "not available";
 
   const isUserThere = async () => {
     const res = await fetch("/.auth/me");
     const { clientPrincipal } = await res.json();
-
+    loggedInUser = clientPrincipal.loggedInUser;
     return clientPrincipal !== null;
   };
 
   const getMessage = async () => {
     //const res = await fetch("/api/hello");
-    const msg =  "hi, there!"; //await res.text();
+    const msg =  "hi, " + loggedInUser; //await res.text();
 
     loggedIn.querySelector(".message").innerHTML = msg;
   };
