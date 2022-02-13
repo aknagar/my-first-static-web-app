@@ -1,12 +1,16 @@
 {
   "navigationFallback": {
     "rewrite": "index.html",
-    "exclude": [ "/_framework/*", "/css/*", "/img/*" ]
+    "exclude": [ "/_framework/*", "/css/*", "/img/*.{png,jpg,gif}" ]
   },
-    "routes": [   
-      {
-        "route": "/chat*",
-        "allowedRoles": ["authenticated"]
-      } 
-    ]
+  "routes": [{
+    "route": "/*",
+    "allowedRoles": ["authenticated"]
+  }],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/.auth/login/aad"
+    }
+  }
   }
