@@ -5,7 +5,7 @@
   },
     "routes": [   
       {
-        "route": "/chat.html",
+        "route": "/chat*",
         "allowedRoles": ["authenticated"]
       } 
     ]
