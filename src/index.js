@@ -11,8 +11,8 @@
   };
 
   const getMessage = async () => {
-    const res = await fetch("/api/hello");
-    const msg = await res.text();
+    //const res = await fetch("/api/hello");
+    const msg =  "hi, there!"; //await res.text();
 
     loggedIn.querySelector(".message").innerHTML = msg;
   };
