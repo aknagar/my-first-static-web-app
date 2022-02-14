@@ -40,12 +40,12 @@
   },
   {
     "route": "/*",
-    "allowedRoles": ["anonymous"]
+    "allowedRoles": ["contributor"]
   }],
   "responseOverrides": {
     "401": {
       "statusCode": 302,
-      "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer"
+      "redirect": "/.auth/login/aad"
     }
   },
   "auth": {
