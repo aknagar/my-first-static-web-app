@@ -1,7 +1,7 @@
 (async () => {
-  const logins = document.getElementById("logins");
-  const spinner = document.getElementById("spinner");
-  const loggedIn = document.getElementById("loggedIn");
+  // const logins = document.getElementById("logins");
+  // const spinner = document.getElementById("spinner");
+  // const loggedIn = document.getElementById("loggedIn");
   var loggedInUser;
 
   const isUserThere = async () => {
@@ -18,12 +18,13 @@
     loggedIn.querySelector(".message").innerHTML = msg;
   };
 
-  if (!(await isUserThere())) {
-    spinner.classList.toggle("hidden");
-    logins.classList.toggle("hidden");
+  if (!(await isUserThere())) {   
+    // spinner.classList.toggle("hidden");
+   // logins.classList.toggle("hidden");
   } else {
-    await getMessage();
-    spinner.classList.toggle("hidden");
-    loggedIn.classList.toggle("hidden");
+    window.location.href = '/chat/chat.html'
+    // await getMessage();
+    // spinner.classList.toggle("hidden");
+    // loggedIn.classList.toggle("hidden");
   }
 })();
