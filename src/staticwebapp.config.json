@@ -1,53 +1,22 @@
 {
   "navigationFallback": {
-    "rewrite": "index.html",
-    "exclude": [ "/_framework/*", "/css/*", "/img/*.{png,jpg,gif}" ]
+    "rewrite": "/index.html",    
+    "exclude": ["/_framework/*", "/css/*", "/img/*.{png,jpg,gif}"]
   },
   "routes": [
     {
-      "route": "/api/*",
-      "allowedRoles": ["authenticated"]
-    },
-    {
       "route": "/login",
-      "rewrite": "/.auth/login/aad"
+      "rewrite": "/.auth/login/aad?post_login_redirect_url=/chat.html"
     },
     {
-     "route": "/logout",
-     "redirect": "/.auth/logout"
+      "route": "/logout",
+      "redirect": "/.auth/logout"
     },
     {
-      "route": "/.auth/login/github",
-      "statusCode": 404
-  },
-  {
-      "route": "/.auth/login/twitter",
-      "statusCode": 404
-  },
-  {
-      "route": "/.auth/login/facebook",
-      "statusCode": 404
-  },
-  {
-      "route": "/.auth/login/google",
-      "statusCode": 404
-  },
-  {
-    "route": "/*.{js,css}",
-    "headers": {
-      "Cache-Control": "public, max-age=31536000, immutable"
+      "route": "/chat/chat.html",
+      "allowedRoles": ["authenticated"]
     }
-  },
-  {
-    "route": "/*",
-    "allowedRoles": ["contributor"]
-  }],
-  "responseOverrides": {
-    "401": {
-      "statusCode": 302,
-      "redirect": "/.auth/login/aad"
-    }
-  },
+  ],
   "auth": {
     "identityProviders": {
       "azureActiveDirectory": {
@@ -59,4 +28,4 @@
       }
     }
   }
-  }
+}

@@ -7,7 +7,7 @@
   const isUserThere = async () => {
     const res = await fetch("/.auth/me");
     const { clientPrincipal } = await res.json();
-    loggedInUser = clientPrincipal.userDetails || "--";
+    loggedInUser = clientPrincipal ? clientPrincipal.userDetails : "--";
     return clientPrincipal !== null;
   };
 
